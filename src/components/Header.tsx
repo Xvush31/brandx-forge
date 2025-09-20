@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,24 +22,24 @@ const Header = () => {
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
             <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              ReCircle
+              TechLoop
             </h1>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/smartphones" className="text-foreground hover:text-primary transition-colors">
               Smartphones
-            </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/laptops" className="text-foreground hover:text-primary transition-colors">
               Laptops
-            </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/tablets" className="text-foreground hover:text-primary transition-colors">
               Tablets
-            </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/garanties" className="text-foreground hover:text-primary transition-colors">
               Garanties
-            </a>
+            </Link>
           </nav>
 
           {/* Search Bar */}
@@ -73,18 +74,18 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
-              <a href="#" className="text-foreground hover:text-primary transition-colors">
+              <Link to="/smartphones" className="text-foreground hover:text-primary transition-colors">
                 Smartphones
-              </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/laptops" className="text-foreground hover:text-primary transition-colors">
                 Laptops
-              </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/tablets" className="text-foreground hover:text-primary transition-colors">
                 Tablets
-              </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/garanties" className="text-foreground hover:text-primary transition-colors">
                 Garanties
-              </a>
+              </Link>
               <div className="pt-4">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
