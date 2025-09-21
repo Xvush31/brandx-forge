@@ -8,9 +8,11 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Disable SWC minification to debug React hooks issue
+  swcMinify: false,
   // Disable static generation to debug React hooks issue
-  output: 'export',
-  trailingSlash: true,
+  // output: 'export',
+  // trailingSlash: true,
   // Security headers
   async headers() {
     return [
