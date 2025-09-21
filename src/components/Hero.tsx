@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Shield, Truck } from "lucide-react";
@@ -91,7 +93,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative z-10">
               <img
-                src={heroImage}
+                src={heroImage.src}
                 alt="Produits reconditionnés premium"
                 className="w-full h-auto rounded-3xl shadow-strong hover-glow animate-float"
               />

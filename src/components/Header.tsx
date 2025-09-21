@@ -1,8 +1,10 @@
+"use client";
+
 import { useState } from "react";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,16 +30,16 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/smartphones" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/smartphones" className="text-foreground hover:text-primary transition-colors">
               Smartphones
             </Link>
-            <Link to="/laptops" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/laptops" className="text-foreground hover:text-primary transition-colors">
               Laptops
             </Link>
-            <Link to="/tablets" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/tablets" className="text-foreground hover:text-primary transition-colors">
               Tablets
             </Link>
-            <Link to="/garanties" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/garanties" className="text-foreground hover:text-primary transition-colors">
               Garanties
             </Link>
           </nav>
@@ -74,16 +76,16 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
-              <Link to="/smartphones" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/smartphones" className="text-foreground hover:text-primary transition-colors">
                 Smartphones
               </Link>
-              <Link to="/laptops" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/laptops" className="text-foreground hover:text-primary transition-colors">
                 Laptops
               </Link>
-              <Link to="/tablets" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/tablets" className="text-foreground hover:text-primary transition-colors">
                 Tablets
               </Link>
-              <Link to="/garanties" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/garanties" className="text-foreground hover:text-primary transition-colors">
                 Garanties
               </Link>
               <div className="pt-4">

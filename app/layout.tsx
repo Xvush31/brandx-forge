@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Providers } from './providers';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -67,17 +67,6 @@ export const metadata: Metadata = {
   },
 };
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 60 * 1000, // 1 minute
-      cacheTime: 5 * 60 * 1000, // 5 minutes
-      retry: 3,
-      refetchOnWindowFocus: false,
-    },
-  },
-});
-
 export default function RootLayout({
   children,
 }: {
@@ -95,13 +84,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
       <body className={inter.className}>
-        <QueryClientProvider client={queryClient}>
+        <Providers>
           <TooltipProvider>
             {children}
             <Toaster />
             <Sonner />
           </TooltipProvider>
-        </QueryClientProvider>
+        </Providers>
       </body>
     </html>
   );

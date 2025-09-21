@@ -8,6 +8,9 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Disable static generation to debug React hooks issue
+  output: 'export',
+  trailingSlash: true,
   // Security headers
   async headers() {
     return [
@@ -40,6 +43,8 @@ const nextConfig = {
     }
     return config;
   },
+  // Fix workspace root warning
+  outputFileTracingRoot: require('path').resolve(__dirname),
 };
 
 module.exports = nextConfig;

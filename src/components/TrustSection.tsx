@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Shield, Award, Truck, RefreshCw, Users, Leaf } from "lucide-react";
 
